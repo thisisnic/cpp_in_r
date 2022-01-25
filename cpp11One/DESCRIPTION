@@ -1,0 +1,5 @@
+Package: cpp11One
+Title: Simple example of cpp11 in an R package
+Version: 0.0.1
+LinkingTo: cpp11
+SystemRequirements: C++11
