@@ -4,3 +4,5 @@
 .RData
 .Ruserdata
 README.html
+*.o
+*.so
