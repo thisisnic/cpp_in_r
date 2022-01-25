@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "cpp11/declarations.hpp"
 
 [[cpp11::register]]
