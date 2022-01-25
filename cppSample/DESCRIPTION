@@ -1,0 +1,5 @@
+Package: cpp11Sample
+Title: Faster sampling in R with C++
+Version: 0.0.1
+LinkingTo: cpp11
+SystemRequirements: C++11
