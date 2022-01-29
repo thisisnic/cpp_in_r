@@ -1,4 +1,4 @@
-Package: cppSimpleFuncs
+Package: cpp11SimpleFuncs
 Title: Simple example of cpp11 in an R package
 Version: 0.0.1
 LinkingTo: cpp11

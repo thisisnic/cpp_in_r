@@ -1,1 +1,0 @@
-useDynLib(cppSimpleFuncs, .registration = TRUE)
