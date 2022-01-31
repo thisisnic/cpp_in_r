@@ -1,6 +1,6 @@
 #include <R.h>
 #include <Rinternals.h>
-SEXP convolve2(SEXP a, SEXP b) {
+SEXP _convolve_convolve2(SEXP a, SEXP b) {
   int na, nb, nab;
   double *xa, *xb, *xab;
   SEXP ab;

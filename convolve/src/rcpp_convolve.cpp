@@ -1,7 +1,6 @@
 #include <Rcpp.h>
 // [[Rcpp::export]]
-Rcpp::NumericVector convolve2cpp(Rcpp::NumericVector a,
-Rcpp::NumericVector b) {
+Rcpp::NumericVector convolve2cpp(Rcpp::NumericVector a,Rcpp::NumericVector b) {
   int na = a.length(),
   nb = b.length();
   Rcpp::NumericVector ab(na + nb - 1);

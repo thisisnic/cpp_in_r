@@ -22,3 +22,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+
+RcppExport SEXP _convolve_convolve2(SEXP, SEXP);
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_convolve_convolve2cpp", (DL_FUNC) &_convolve_convolve2cpp, 2},
+    {"_convolve_convolve2", (DL_FUNC) &_convolve_convolve2, 2},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_convolve(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+}
