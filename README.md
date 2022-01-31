@@ -9,3 +9,5 @@ Repository contents:
 * [`./RcppOne`](https://github.com/thisisnic/cpp_in_r/tree/main/RcppOne) - a minimal example of using C++ in an R package via the Rcpp package
 
 * [`./convolve`](https://github.com/thisisnic/cpp_in_r/tree/main/convolve) - an R package containing C and C++ (via Rcpp) code that do the same thing
+
+** NOTE: convolve currently broken!! **
