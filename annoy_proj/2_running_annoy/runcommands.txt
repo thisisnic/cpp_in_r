@@ -1,0 +1,4 @@
+# compile the code
+
+# read this for useful info on working with libraries
+https://stackoverflow.com/questions/10358745/how-to-use-libraries

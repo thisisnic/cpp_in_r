@@ -1,0 +1,5 @@
+# compile the files
+g++  main.cpp HelloWorld.cpp
+
+# run the compiled object
+./a.out
