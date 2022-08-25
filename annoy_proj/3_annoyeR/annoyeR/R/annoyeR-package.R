@@ -1,1 +1,2 @@
-#' @useDynLib pkgname, .registration = TRUE
+#' @useDynLib annoyeR, .registration = TRUE
+"_PACKAGE"
