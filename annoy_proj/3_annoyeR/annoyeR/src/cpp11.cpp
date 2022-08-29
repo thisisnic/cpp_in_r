@@ -6,16 +6,16 @@
 #include <R_ext/Visibility.h>
 
 // annoy.cpp
-integers annoy_euclidean(int n_trees);
-extern "C" SEXP _annoyeR_annoy_euclidean(SEXP n_trees) {
+integers annoy_euclidean(cpp11::doubles_matrix<cpp11::by_row> mat, cpp11::doubles_matrix<cpp11::by_row> test_vec, int n_trees);
+extern "C" SEXP _annoyeR_annoy_euclidean(SEXP mat, SEXP test_vec, SEXP n_trees) {
   BEGIN_CPP11
-    return cpp11::as_sexp(annoy_euclidean(cpp11::as_cpp<cpp11::decay_t<int>>(n_trees)));
+    return cpp11::as_sexp(annoy_euclidean(cpp11::as_cpp<cpp11::decay_t<cpp11::doubles_matrix<cpp11::by_row>>>(mat), cpp11::as_cpp<cpp11::decay_t<cpp11::doubles_matrix<cpp11::by_row>>>(test_vec), cpp11::as_cpp<cpp11::decay_t<int>>(n_trees)));
   END_CPP11
 }
 
 extern "C" {
 static const R_CallMethodDef CallEntries[] = {
-    {"_annoyeR_annoy_euclidean", (DL_FUNC) &_annoyeR_annoy_euclidean, 1},
+    {"_annoyeR_annoy_euclidean", (DL_FUNC) &_annoyeR_annoy_euclidean, 3},
     {NULL, NULL, 0}
 };
 }
