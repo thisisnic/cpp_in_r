@@ -10,17 +10,24 @@
 using namespace std;
 using namespace cpp11;
 
+
+
+
 [[cpp11::register]]
 integers annoy_euclidean(cpp11::doubles_matrix<cpp11::by_row> mat, cpp11::doubles_matrix<cpp11::by_row> test_vec, int n_trees){
 
   int f = mat.ncol();
+
+
+
   Annoy::AnnoyIndex<int, double, Annoy::Euclidean, Annoy::Kiss32Random, Annoy::AnnoyIndexSingleThreadedBuildPolicy> a =
     Annoy::AnnoyIndex<int, double, Annoy::Euclidean, Annoy::Kiss32Random, Annoy::AnnoyIndexSingleThreadedBuildPolicy>(f);
 
   int index = 0;
 
   for (auto row : mat) {
-    double dbl_row[f];
+    double *dbl_row; // Adding this in prevents the "C++ forbids variable length array" error
+    dbl_row = new double[f];
     for(int i = 0; i < f; i++){
       dbl_row[i] = row[i];
     }
@@ -37,10 +44,11 @@ integers annoy_euclidean(cpp11::doubles_matrix<cpp11::by_row> mat, cpp11::double
   // from a doubles_matrix
   //const double input_vec[] = cpp11::as_cpp<doubles_matrix>(test_vec);
 
-  double test_row[f];
+  double *test_row; // Adding this in prevents the "C++ forbids variable length array" error
 
   // This loops too many times somewhere
   for (auto row : test_vec) {
+    test_row = new double[f];
     for(int i = 0; i < f; i++){
       test_row[i] = row[i];
     }
